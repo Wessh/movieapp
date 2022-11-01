@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
               TextSpan(
                 text: 'App',
                 style: TextStyle(
-                  color: Colors.blue[900],
+                  color: Colors.blue[800],
                 ),
               ),
             ],
