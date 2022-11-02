@@ -9,8 +9,8 @@ class DioServiceImp implements DioService {
       BaseOptions(
         baseUrl: 'https://api.themoviedb.org/4/',
         headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-          'Authorization': 'Bearer $key'
+          'content-type': 'application/json;charset=utf-8',
+          'authorization': 'Bearer $keyJWT'
         },
       ),
     );
