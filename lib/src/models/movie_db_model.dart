@@ -39,8 +39,8 @@ class MovieDBModel {
         totalResults: json['total_results'],
         nameCreatedBy: json['created_by']['name'],
         gravatarHashCreatedBy: json['created_by']['gravatar_hash'],
-        movies: json['movies']
-            .map<MovieModel>((x) => MovieModel.fromJson(x))
+        movies: json['results']
+            .map((x) => MovieModel.fromJson(x))
             .toList()
             .cast<MovieModel>(),
       );

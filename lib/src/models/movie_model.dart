@@ -14,7 +14,7 @@ class MovieModel {
   final String title;
   final String releaseDate;
   final String posterPath;
-  final int voteAverage;
+  final num voteAverage;
   final int voteCount;
 
   MovieModel({
