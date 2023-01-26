@@ -33,7 +33,7 @@ class CustomListCard extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Text('Total de votos: ${movie.voteCount}'),
+                  Text('Popularidade: ${movie.popularity}'),
                 ],
               ),
             ),

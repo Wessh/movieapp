@@ -1,16 +1,15 @@
 # movieapp
 
-A new Flutter project.
+Projeto de estudo para criação de uma aplicativo que utiliza a biblioteca TheMovieDB
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Após baixar o projeto executar o comando abaixo.
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter pub get
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Bibliotecas usadas
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [lottie](https://pub.dev/packages/lottie)

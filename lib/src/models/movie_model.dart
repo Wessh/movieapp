@@ -12,6 +12,7 @@ class MovieModel {
   final String originalTitle;
   final String overview;
   final String title;
+  final num popularity;
   final String releaseDate;
   final String posterPath;
   final num voteAverage;
@@ -26,6 +27,7 @@ class MovieModel {
     required this.originalTitle,
     required this.overview,
     required this.title,
+    required this.popularity,
     required this.releaseDate,
     required this.posterPath,
     required this.voteAverage,
@@ -41,6 +43,7 @@ class MovieModel {
         originalTitle: json['original_title'],
         overview: json['overview'],
         title: json['title'],
+        popularity: json['popularity'],
         releaseDate: json['release_date'],
         posterPath: json['poster_path'],
         voteAverage: json['vote_average'],
