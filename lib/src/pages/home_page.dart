@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:movieapp/src/controllers/movie_controller.dart';
 import 'package:movieapp/src/services/dio_service_imp.dart';
 
@@ -29,9 +30,15 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 40,
               ),
-              Text(
-                'Movies',
-                style: Theme.of(context).textTheme.headline3,
+              ValueListenableBuilder(
+                valueListenable: _controller.movies,
+                builder: (_, movie, __) => Visibility(
+                  visible: movie != null,
+                  child: Text(
+                    'Movies',
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                ),
               ),
               ValueListenableBuilder(
                 valueListenable: _controller.movies,
@@ -44,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                             CustomListCard(movie: movie.movies[index]),
                         separatorBuilder: (_, __) => const Divider(),
                       )
-                    : const CircularProgressIndicator(),
+                    : Lottie.asset('assets/movie_anim.json'),
               ),
             ],
           ),
