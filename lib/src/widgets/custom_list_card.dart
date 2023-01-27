@@ -10,27 +10,28 @@ class CustomListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
                 builder: (_) => DetailsPage(movie: movie),
-              ));
-        },
-        child: Container(
-          height: 200,
-          decoration: BoxDecoration(
-            color: Colors.black54,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(15),
-                    topLeft: Radius.circular(15)),
+                fullscreenDialog: true));
+      },
+      child: Container(
+        height: 200,
+        decoration: BoxDecoration(
+          color: Colors.black54,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  topLeft: Radius.circular(15)),
+              child: Hero(
+                tag: movie.id,
                 child: Image.network(
                   API.REQUEST_IMG(movie.posterPath),
                   loadingBuilder: (_, child, loadingProgress) {
@@ -39,29 +40,29 @@ class CustomListCard extends StatelessWidget {
                   },
                 ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      Text(
-                        movie.title,
-                        style: Theme.of(context).textTheme.headline6,
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.visible,
-                      ),
-                      const Spacer(),
-                      Text('Nota: ${movie.voteAverage}'),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text('Popularidade: ${movie.popularity}'),
-                    ],
-                  ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Text(
+                      movie.title,
+                      style: Theme.of(context).textTheme.headline6,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.visible,
+                    ),
+                    const Spacer(),
+                    Text('Nota: ${movie.voteAverage}'),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text('Popularidade: ${movie.popularity}'),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
