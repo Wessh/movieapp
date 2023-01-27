@@ -36,9 +36,12 @@ class _HomePageState extends State<HomePage> {
                   visible: movie != null,
                   child: Text(
                     'Movies',
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
+              ),
+              TextField(
+                onChanged: _controller.onChanged,
               ),
               ValueListenableBuilder(
                 valueListenable: _controller.movies,
